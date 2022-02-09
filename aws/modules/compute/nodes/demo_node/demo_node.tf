@@ -40,7 +40,7 @@ resource "aws_security_group" "demo-sg" {
 	}
 
   # metadata tagging
-	tags {
+	tags = {
       Name       = "demo_sg"
       Owner      = "${var.owner}"
       Depends_on = "${var.dependencies[0]}" # example tag variable, non-critical value
