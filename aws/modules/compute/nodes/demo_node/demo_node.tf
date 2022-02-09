@@ -11,7 +11,7 @@ resource "aws_instance" "demo-node" {
   subnet_id              = "${var.subnet_id}"
 
   # metadata tagging
-  tags {
+  tags = {
       Name  = "demo-node-${count.index}"
       Owner = "${var.owner}"
   }
