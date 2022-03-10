@@ -5,13 +5,13 @@ resource "aws_instance" "demo-node" {
   # of each instance (instance_type)
   ami                    = "${var.ami}"
   instance_type          = "${var.instance_type}"
-  count                  = "${var.count}"
+  count                  = "${var.counter}"
   key_name               = "${var.key_name}"
   vpc_security_group_ids = ["${aws_security_group.demo-sg.id}"]
   subnet_id              = "${var.subnet_id}"
 
   # metadata tagging
-  tags {
+  tags = {
       Name  = "demo-node-${count.index}"
       Owner = "${var.owner}"
   }
@@ -40,9 +40,9 @@ resource "aws_security_group" "demo-sg" {
 	}
 
   # metadata tagging
-	tags {
+	tags = {
       Name       = "demo_sg"
       Owner      = "${var.owner}"
-      Depends_on = "${var.dependencies[0]}" # example tag variable, non-critical value
+#      Depends_on = "${var.dependencies}" # example tag variable, non-critical value
   }
 }

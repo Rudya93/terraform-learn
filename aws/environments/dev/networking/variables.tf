@@ -3,7 +3,7 @@ variable "environment" {
 }
 
 variable "vpc_cidr_block" { }
-variable "aws_region" { default = "eu-west-1" }
+variable "aws_region" { default = "us-east-1ex" }
 
 variable "subnet_a_public_cidr_block" { }
 variable "subnet_b_public_cidr_block" { }

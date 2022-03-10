@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
 #### Class wide variables ####
 variable ami   { default = "" }
 variable owner { default = "" }
@@ -22,7 +26,7 @@ module "demo-node" {
   vpc_id        = "${var.demo_node_vpc_id}"
 
   owner         = "${var.owner}"
-  dependencies    = ["${module.demo-node-dependency.demo_node_dependency_instance_id}"]
+  dependencies    = ["${module.demo-node-dependency.*.demo_node_dependency_instance_id}"]
 }
 #####################
 
