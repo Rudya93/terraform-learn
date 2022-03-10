@@ -4,13 +4,9 @@ output "vpc_id_out" { value = "${module.vpc.vpc_id_out}" }
 
 output "igw_id_out" { value = "${module.igw.igw_id_out}" }
 
-output "az_a_nat_gateway_id_out" { value = "${module.az_a_nat_gateway.nat_gateway_id}" }
 
-output "az_a_nat_gateway_ip_out" { value = "${module.az_a_nat_gateway.nat_gateway_ip}" }
 
-output "az_b_nat_gateway_id_out" { value = "${module.az_b_nat_gateway.nat_gateway_id}" }
 
-output "az_b_nat_gateway_ip_out" { value = "${module.az_b_nat_gateway.nat_gateway_ip}" }
 
 output "public_routing_table_id_out" { value = "${module.public_route.pub_route_table_id_out}" }
 
